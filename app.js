@@ -33,6 +33,8 @@ function shuffle(array) {
     return array;
 }
 
+shuffle(myState);
+
 function myNewGame() {
     resetState();
     this.myWins = 0;
