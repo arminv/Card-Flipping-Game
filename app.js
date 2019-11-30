@@ -7,17 +7,19 @@ var myState = [3, 4, 3, 8, 6, 4, 8, 7, 2, 7, 5, 5, 2, 1, 6, 1];
 // Number of card pairs matched:
 var myWins = 0;
 
-function resetState() {
+// TODO: Add a timer to see how long it takes the user to finish the game:
+
+const resetState = () => {
     this.numClick = 0;
     this.clickValues = [];
 }
 
-function resetImages() {
+const resetImages = () => {
     document.getElementById(this.clickValues[0].toString()).src = './img/default.jpg';
     document.getElementById(this.clickValues[1].toString()).src = './img/default.jpg';
 }
 
-function shuffle(array) {
+const shuffle = array => {
     var currentIndex = array.length,
         temporaryValue, randomIndex;
     // While there remain elements to shuffle...
@@ -35,7 +37,7 @@ function shuffle(array) {
 
 shuffle(myState);
 
-function myNewGame() {
+const myNewGame = () => {
     resetState();
     this.myWins = 0;
     shuffle(this.myState);
@@ -45,7 +47,7 @@ function myNewGame() {
     }
 }
 
-function myReplace(original) {
+const myReplace = original => {
     this.clickValues.push(original);
 
     if (this.numClick == 0) {
