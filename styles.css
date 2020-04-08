@@ -1,15 +1,49 @@
-h1{
-    color: red;
+h1 {
+  color: red;
 }
 
 img {
-    position: relative;
-    float: left;
-    width: 150px;
-    height: 150px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
+  position: relative;
+  float: left;
+  width: 10rem;
+  height: 10rem;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 5%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55), 0 6px 12px rgba(0, 0, 0, 0.23);
 }
 
+h3 {
+  color: red;
+  font-weight: 500;
+  font-size: large;
+}
+
+.notification {
+  border-radius: 1%;
+  background: linear-gradient(
+    45deg,
+    rgb(144, 222, 222),
+    rgba(126, 132, 205, 0.42),
+    rgba(216, 216, 92, 0.42)
+  );
+  max-height: auto;
+}
+
+.picture-gallery {
+  /* background-color: rgba(16, 16, 14, 0.884); */
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  /* position: relative; */
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-flexbox;
+  /* text-align: center; */
+}
+
+.column {
+  margin-right: auto;
+}

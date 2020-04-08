@@ -1,26 +1,28 @@
+const NUMBER_OF_PAIRS = 8;
+const DEFAULT_IMG = './img/default.png';
 // Number of clicks:
-var numClick = 0;
+let numClick = 0;
 // Values of clicks
-var clickValues = [];
+let clickValues = [];
 // This will be used for finding matched cards:
-var myState = [3, 4, 3, 8, 6, 4, 8, 7, 2, 7, 5, 5, 2, 1, 6, 1];
+let myState = [3, 4, 3, 8, 6, 4, 8, 7, 2, 7, 5, 5, 2, 1, 6, 1];
 // Number of card pairs matched:
-var myWins = 0;
+let myWins = 0;
 
 // TODO: Add a timer to see how long it takes the user to finish the game:
 
 const resetState = () => {
-    this.numClick = 0;
-    this.clickValues = [];
+    numClick = 0;
+    clickValues = [];
 }
 
 const resetImages = () => {
-    document.getElementById(this.clickValues[0].toString()).src = './img/default.jpg';
-    document.getElementById(this.clickValues[1].toString()).src = './img/default.jpg';
+    document.getElementById(clickValues[0].toString()).src = DEFAULT_IMG;
+    document.getElementById(clickValues[1].toString()).src = DEFAULT_IMG;
 }
 
 const shuffle = array => {
-    var currentIndex = array.length,
+    let currentIndex = array.length,
         temporaryValue, randomIndex;
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
@@ -39,23 +41,23 @@ shuffle(myState);
 
 const myNewGame = () => {
     resetState();
-    this.myWins = 0;
-    shuffle(this.myState);
+    myWins = 0;
+    shuffle(myState);
     for (i = 1; i < 17; i++) {
-        document.getElementById(i.toString()).style.visibility = "visible";
-        document.getElementById(i.toString()).src = './img/default.jpg';
+        document.getElementById(i.toString()).style.visibility = 'visible';
+        document.getElementById(i.toString()).src = DEFAULT_IMG;
     }
 }
 
 const myReplace = original => {
-    this.clickValues.push(original);
+    clickValues.push(original);
 
-    if (this.numClick == 0) {
+    if (numClick == 0) {
         var elOne = document.getElementById(original.toString());
-        elOne.src = './img/' + this.myState[clickValues[numClick] - 1].toString() + '.jpg';
-        this.numClick++;
+        elOne.src = './img/' + myState[clickValues[numClick] - 1].toString() + '.jpg';
+        numClick++;
 
-    } else if (this.numClick == 1) {
+    } else if (numClick == 1) {
         if (clickValues[0] === clickValues[1]) {
             alert('Choose a different card please!');
             resetImages();
@@ -63,12 +65,12 @@ const myReplace = original => {
         }
 
         var elTwo = document.getElementById(original.toString());
-        elTwo.src = './img/' + this.myState[clickValues[numClick] - 1].toString() + '.jpg';
-        this.numClick++;
+        elTwo.src = './img/' + myState[clickValues[numClick] - 1].toString() + '.jpg';
+        numClick++;
 
-        if (this.myState[clickValues[0] - 1] === this.myState[clickValues[1] - 1]) {
-            document.getElementById(this.clickValues[0].toString()).style.visibility = "hidden";
-            document.getElementById(this.clickValues[1].toString()).style.visibility = "hidden";
+        if (myState[clickValues[0] - 1] === myState[clickValues[1] - 1]) {
+            document.getElementById(clickValues[0].toString()).style.visibility = 'hidden';
+            document.getElementById(clickValues[1].toString()).style.visibility = 'hidden';
             resetState();
             myWins++;
         } else {
@@ -76,8 +78,11 @@ const myReplace = original => {
             setTimeout(resetState, 500);
         }
     }
-    if (myWins >= 8) {
-        alert('Game is Over!');
-        myNewGame();
+    if (myWins >= NUMBER_OF_PAIRS) {
+        if (confirm("Game is Over! Would you like to play again?")) {
+            myNewGame();
+        } else {
+            return;
+        }
     }
 };
