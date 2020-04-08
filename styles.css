@@ -1,24 +1,8 @@
-h1 {
-  color: red;
-}
-
-img {
-  position: relative;
-  float: left;
-  width: 10rem;
-  height: 10rem;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: pointer;
-  border-radius: 5%;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55), 0 6px 12px rgba(0, 0, 0, 0.23);
-}
-
 h3 {
   color: red;
-  font-weight: 500;
+  font-weight: 400;
   font-size: large;
+  text-align: center;
 }
 
 .notification {
@@ -30,20 +14,4 @@ h3 {
     rgba(216, 216, 92, 0.42)
   );
   max-height: auto;
-}
-
-.picture-gallery {
-  /* background-color: rgba(16, 16, 14, 0.884); */
-  width: 90%;
-  height: auto;
-  margin: 0 auto;
-  /* position: relative; */
-  margin-left: auto;
-  margin-right: auto;
-  display: inline-flexbox;
-  /* text-align: center; */
-}
-
-.column {
-  margin-right: auto;
 }
