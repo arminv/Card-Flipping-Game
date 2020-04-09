@@ -1,8 +1,12 @@
 h3 {
   color: red;
   font-weight: 400;
-  font-size: large;
+  font-size: 1em;
   text-align: center;
+}
+
+img {
+  cursor: pointer;
 }
 
 .notification {
@@ -14,4 +18,13 @@ h3 {
     rgba(216, 216, 92, 0.42)
   );
   max-height: auto;
+}
+
+.timer {
+  color: rgb(180, 251, 215);
+}
+
+.tag {
+  height: 3em !important;
+  width: 7em;
 }
