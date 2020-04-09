@@ -1,142 +1,230 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Memory Game</title>
-    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.1/css/bulma.css>
-    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet"
+    href=https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.1/css/bulma.css>
+    <link href="styles.css" rel="stylesheet" />
     <script src="app.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <noscript>
-        <strong>We're sorry but the Card Flipping Game doesn't work properly without JavaScript enabled. Please
-            enable it
-            to continue.</strong>
+      <strong
+        >We're sorry but the Card Flipping Game doesn't work properly without
+        JavaScript enabled. Please enable it to continue.</strong
+      >
     </noscript>
     <div class="container is-fullhd">
-        <br>
-        <div class="notification">
-            <a id="demo" class="button is-warning is-medium" onclick="newGame()">Start a New Game</a>
-            <span class="tag is-dark is-large">
-                <h3>Your Time : <div class="timer">00:00:00</div>
-                </h3>
-            </span>
-            <hr>
-            <div class="picture-gallery">
-                <div
-                    class="columns is-centered is-vcentered is-mobile is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
-                    <div class="column is-2">
-                        <h3>1</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="1" onclick="runGame(1)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>2</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="2" onclick="runGame(2)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>3</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="3" onclick="runGame(3)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>4</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="4" onclick="runGame(4)" src="./img/default.png">
-                        </figure>
-                    </div>
-                </div>
-                <div
-                    class="columns is-centered is-mobile is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
-                    <div class="column is-2">
-                        <h3>5</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="5" onclick="runGame(5)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>6</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="6" onclick="runGame(6)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>7</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="7" onclick="runGame(7)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>8</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="8" onclick="runGame(8)" src="./img/default.png">
-                        </figure>
-                    </div>
-                </div>
-                <div
-                    class="columns is-centered is-mobile is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
-                    <div class="column is-2">
-                        <h3>9</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="9" onclick="runGame(9)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>10</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="10" onclick="runGame(10)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>11</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="11" onclick="runGame(11)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>12</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="12" onclick="runGame(12)" src="./img/default.png">
-                        </figure>
-                    </div>
-                </div>
-                <div
-                    class="columns is-centered is-mobile is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
-                    <div class="column is-2">
-                        <h3>13</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="13" onclick="runGame(13)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>14</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="14" onclick="runGame(14)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>15</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="15" onclick="runGame(15)" src="./img/default.png">
-                        </figure>
-                    </div>
-                    <div class="column is-2">
-                        <h3>16</h3>
-                        <figure class="image is-1by1">
-                            <img class="is-rounded" id="16" onclick="runGame(16)" src="./img/default.png">
-                        </figure>
-                    </div>
-                </div>
+      <br />
+      <div class="notification">
+        <a id="demo" class="button is-warning is-medium" onclick="newGame()"
+          >Start a New Game</a
+        >
+        <span class="tag is-dark is-large">
+          <h3>
+            Your Time :
+            <div class="timer">00:00:00</div>
+          </h3>
+        </span>
+        <hr />
+        <div class="picture-gallery">
+          <div
+            class="columns is-centered is-vcentered is-mobile is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd"
+          >
+            <div class="column is-2">
+              <h3>1</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="1"
+                  onclick="runGame(1)"
+                  src="./img/default.png"
+                />
+              </figure>
             </div>
+            <div class="column is-2">
+              <h3>2</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="2"
+                  onclick="runGame(2)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>3</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="3"
+                  onclick="runGame(3)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>4</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="4"
+                  onclick="runGame(4)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+          </div>
+          <div
+            class="columns is-centered is-mobile is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd"
+          >
+            <div class="column is-2">
+              <h3>5</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="5"
+                  onclick="runGame(5)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>6</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="6"
+                  onclick="runGame(6)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>7</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="7"
+                  onclick="runGame(7)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>8</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="8"
+                  onclick="runGame(8)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+          </div>
+          <div
+            class="columns is-centered is-mobile is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd"
+          >
+            <div class="column is-2">
+              <h3>9</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="9"
+                  onclick="runGame(9)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>10</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="10"
+                  onclick="runGame(10)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>11</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="11"
+                  onclick="runGame(11)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>12</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="12"
+                  onclick="runGame(12)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+          </div>
+          <div
+            class="columns is-centered is-mobile is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd"
+          >
+            <div class="column is-2">
+              <h3>13</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="13"
+                  onclick="runGame(13)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>14</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="14"
+                  onclick="runGame(14)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>15</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="15"
+                  onclick="runGame(15)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+            <div class="column is-2">
+              <h3>16</h3>
+              <figure class="image is-1by1">
+                <img
+                  class="is-rounded"
+                  id="16"
+                  onclick="runGame(16)"
+                  src="./img/default.png"
+                />
+              </figure>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
