@@ -1,7 +1,7 @@
 # Card-Flipping-Game
 
-A very simple card flipping game in pure JS.
+A simple memory game in pure JavaScript. Using [Bulma](https://bulma.io) for styling.
 
 
-# Quick Demo
+# Demo
 ![](demo.gif)
