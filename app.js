@@ -43,6 +43,7 @@ const shuffle = (array) => {
 shuffle(gameState);
 
 const newGame = () => {
+  changeTimerBackground();
   numberOfWins = 0;
   restartTimer();
   resetState();
@@ -56,6 +57,8 @@ const newGame = () => {
 const runGame = (original) => {
   if (firstGame) {
     startTimer();
+    changeTimerBackground();
+    firstGame = false;
   }
   clickValues.push(original);
 
@@ -159,4 +162,16 @@ const getTimer = () => {
     (milliseconds < 10 ? '0' + milliseconds : milliseconds)
   );
 };
-// -------------------------------------------
+
+// -----------------Animations-----------------
+
+const changeTimerBackground = () => {
+  const tag = document.querySelector('.tag');
+  const tl = new TimelineMax();
+  tl.fromTo(
+    [tag],
+    1,
+    { backgroundColor: 'white' },
+    { backgroundColor: 'rgb(53,54,53)', ease: Power2.easeInOut }
+  );
+};
